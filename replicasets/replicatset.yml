@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: beekaranta-app-replicaset
+  labels:
+    app: beekaranta-app-replicaset
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: beekaranta-app
+
+
+  template:
+    metadata:
+      name: beekaranta-nginx-pod
+      labels:
+        app: beekaranta-app
+    spec:
+      containers:
+        - name: nginx
+          image: nginx

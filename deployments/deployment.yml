@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: beekaranta-frontend-deployment
+
+spec:
+  template:
+    metadata:
+      labels:
+        app: beekaranta-frontend
+        tier: frontend
+    spec:
+      containers:
+      - name: beekaranta-frontend
+        image: nginx
+
+  replicas: 3
+  selector:
+    matchLabels:
+      app: beekaranta-frontend
+/mnt/DATA/learnings/DevOps/kubernetes/kodekloud_labs/deployments/deployment.yml

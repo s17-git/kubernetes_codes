@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: beekaranta-nginx-pod
+  labels:
+    app: beekaranta-nginx
+    env: production
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+  
